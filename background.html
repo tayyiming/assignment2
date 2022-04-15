@@ -1,0 +1,193 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Cooking</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" type="image/png" href="media/icon.png">
+<link rel="stylesheet" href="hobby.css">
+<style>
+body {font-family: "Lato", sans-serif}
+.mySlides {display: none}
+</style>
+</head>
+<body>
+<style>
+body {font-family: "Times New Roman", Georgia, Serif;}
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Playfair Display";
+  letter-spacing: 5px;
+}
+</style>
+
+<script>
+// Automatic Slideshow - change image every 4 seconds
+var myIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}    
+  x[myIndex-1].style.display = "block";  
+  setTimeout(carousel, 4000);    
+}
+
+// Used to toggle the menu on small screens when clicking on the menu button
+function myFunction() {
+  var x = document.getElementById("navDemo");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+
+// When the user clicks anywhere outside of the modal, close it
+var modal = document.getElementById('ticketModal');
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+let slideIndex = 1;
+showSlides(slideIndex);
+
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function myFunction1() {
+  document.getElementById("demo1").style.color = "#e789fa";
+}
+function myFunction2() {
+  document.getElementById("demo2").style.color = "#e789fa";
+}
+function myFunction3() {
+  document.getElementById("demo3").style.color = "#e789fa";
+}
+function myFunction4() {
+  document.getElementById("demo4").style.color = "#e789fa";
+}
+function myFunction5() {
+  document.getElementById("demo5").style.color = "#e789fa";
+}
+function myFunction6() {
+  document.getElementById("demo6").style.color = "#e789fa";
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+function myFunctiondark() {
+   var element = document.body;
+   element.classList.toggle("dark-mode");
+}
+</script>
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-black w3-card">
+    <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <a href="index.html" style="font-size: 1.3vw;" class="w3-bar-item w3-button w3-padding-large">HOME</a>
+    <a href="background.html" style="font-size: 1.3vw;" class="w3-bar-item w3-button w3-padding-large w3-hide-small">BACKGROUND</a>
+    <a href="cooking.html" style="font-size: 1.3vw;" class="w3-bar-item w3-button w3-padding-large w3-hide-small">COOKING</a>
+    <a href="locations.html" style="font-size: 1.3vw;" class="w3-bar-item w3-button w3-padding-large w3-hide-small">LOCATIONS</a>
+    <div class="w3-dropdown-hover w3-hide-small">
+      <button style="font-size: 1.3vw;" class="w3-padding-large w3-button" title="More">MORE</i></button>     
+      <div class="w3-dropdown-content w3-bar-block w3-card-4">
+        <a href="photos1.html" class="w3-bar-item w3-button">Media Archive</a>
+        <a href="photos2.html" class="w3-bar-item w3-button">Contacts</a>
+      </div>
+    </div>
+        <button style="font-size: 1vw;" onclick="myFunctiondark()">Toggle dark mode</button>
+  </div>
+</div>
+
+<!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
+<div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
+  <a href="background.html" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Background</a>
+  <a href="cooking.html" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Cooking</a>
+  <a href="locations.html"" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Locations</a>
+    <a href="photos1.html" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Media Archive</a>
+      <a href="photos2.html" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Contacts</a>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="w3-content" style="max-width:1100px">
+  <!-- About Section -->
+  <div class="w3-row w3-padding-64" id="about">
+    <div class="w3-col m6 w3-padding-large w3-hide-small">
+        <p className="mySlides"></p>
+    </div>
+<br>
+    <div class="w3-col m6 w3-padding-large container1">
+      <h1 class="w3-center">Spark of Interest</h1>
+      <p class="w3-large details-content rte">Thinking back, what started my interest in cooking was some simple video clips I saw on youtube and scenes depicting food in movies. The mouth-watering shots of food cooked and plated by professional gave me hope that i could replicate dishes like those for my family. Another reason which sparked my interest was the tasty dishes that my mother would cook for the family. </p>
+          <div>
+             <img class="centered" style ="width: 35vw;  top: 50%; left: -50%;" src="media/grilledcheesechef2014.jpg" class="w3-round w3-image" alt="Grilled Cheese, Chef(2014)" style="width:100%;">
+          </div>
+    </div>
+  </div>
+
+  <!-- Menu Section -->
+    <div class="w3-col l6 w3-padding-large container1">
+      <h1 style="transform: translate(0%, 300%)"class="w3-center">Start of the journey</h1>
+        <p style="
+  text-align: center; transform: translate(0%, 90%);" class="w3-large details-content rte"> However, all these remained as an interest until army. Towards the end of my national service, I started to have some free time to myself. During which, I started learning from my mother and spent time to test out some dishes. One of the very first dishes I cooked was a simple stir-fried franks with potato, a typical dish sold at economic rice stalls. </p>
+     <img class="centered2" style ="width: 35vw;  top: -100%; left: 75%;" src="media/hotdogssausagesandsteameggs.jpg" class="w3-round w3-image" alt="stir-fried franks with potato" style="width:100%;">
+    </div>
+  </div>
+
+<div class="container" style="
+  text-align: center; ">
+    <div class="w3-row w3-padding-64" id="about">
+        <div class="w3-col m6 w3-padding-large w3-hide-small">
+        </div>
+    <div class="w3-col m6 w3-padding-large container1">
+      <h1 class="w3-center">Moving Forward</h1>
+      <p class="w3-large details-content rte">As time progresses and more Youtube videos caught my attention, I start learning dishes that I like. One such example was the carbonara. </p>
+      <div>
+      <img class="centered3" style ="width: 35vw;  top: 0%; left: -145%;" src="media/carbonara.jpg" class="w3-round w3-image" alt="Carbonara" style="width:100%;">
+    </div>
+    </div>
+
+<div class="container1">
+  <div class="w3-row w3-padding-64" id="menu">
+    <div class="w3-col l6 w3-padding-large container1">
+      <h1 class="w3-center" style="transform: translate(0%, -100%)" >Trying Out</h1>
+ <p class="w3-large details-content rte" style="transform: translate(0%, -50%)"> Sometimes, I would test out my culinary skills and tried more complex dishes like the chicken lollipop. The hard part of this dish was to prepare the lollipops which took me a good 5 minutes per piece. </p>
+      <img class="centered4" style ="width: 35vw;  top: 85%; left: 75%;" src="media/chickenlollipop.jpg" class="w3-round w3-image" alt="stir-fried franks with potato" style="width:100%;">
+      </div>
+        <div class="w3-row w3-padding-64" id="menu">
+    <div class="w3-col l6 w3-padding-large">
+</div>
+</div>
+
+</body>
+</html>
+
+
