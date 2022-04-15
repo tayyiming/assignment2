@@ -1,0 +1,105 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Cooking</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" type="image/png" href="media/icon.png">
+<link rel="stylesheet" href="hobby.css">
+<style>
+body {font-family: "Lato", sans-serif}
+.mySlides {display: none}
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-black w3-card">
+    <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <a href="index.html" style="font-size: 1.3vw;" class="w3-bar-item w3-button w3-padding-large">HOME</a>
+    <a href="background.html" style="font-size: 1.3vw;" class="w3-bar-item w3-button w3-padding-large w3-hide-small">BACKGROUND</a>
+    <a href="cooking.html" style="font-size: 1.3vw;" class="w3-bar-item w3-button w3-padding-large w3-hide-small">COOKING</a>
+    <a href="locations.html" style="font-size: 1.3vw;" class="w3-bar-item w3-button w3-padding-large w3-hide-small">LOCATIONS</a>
+    <div class="w3-dropdown-hover w3-hide-small">
+      <button style="font-size: 1.3vw;" class="w3-padding-large w3-button" title="More">MORE</i></button>     
+      <div class="w3-dropdown-content w3-bar-block w3-card-4">
+        <a href="photos1.html" class="w3-bar-item w3-button">Media Archive</a>
+        <a href="photos2.html" class="w3-bar-item w3-button">Contacts</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
+<div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
+  <a href="background.html" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Background</a>
+  <a href="cooking.html" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Cooking</a>
+  <a href="locations.html"" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Locations</a>
+    <a href="photos1.html" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Media Archive</a>
+      <a href="photos2.html" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Contacts</a>
+</div>
+
+<!-- Page content -->
+<div class="w3-content" style="max-width:2000px;margin-top: 37px">
+
+<div class="containers" style="
+    position: relative;
+  text-align: center;
+  color: white;
+  font-size: 40px;
+  font-family:'Brush Script MT', cursive;
+  max-height:619px;
+  overflow: hidden;">
+<img src="media/sparks.gif" alt="sparks background" style="width:100%">
+<h class="centered" style="width: 25vw; font-size: 3vw; border-style: groove; border-width: 5px;">My Hobby</h>
+<p class="centered" style=" width: 40vw; font-size: 1vw; top: 30%; left: 50%;"> In this webpage, I will introduce my hobby, cooking. Cooking is the art, science and craft of using heat to prepare food for consumption. </p>
+<h class="centered" style="width: 10vw;border-style: groove; border-width: 3px; font-size: 1.3vw; top: 40%; left: 25%;"><a href="background.html"></a> BACKGROUND </h>
+ <a href="background.html"><img class="centered" style ="width: 17vw;  top: 57%; left: 25%;" src="media/chef.jpg" alt="Chef(2014) movie"></a>
+<p class="centered" style="width: 20vw;font-size: 1.3vw; top: 75%; left: 25%;"> You can find out how i got into cooking from the background tab </p>
+<h class="centered" style="width: 11vx;border-style: groove; border-width: 3px; font-size: 1.3vw; top: 40%; left: 50%;"> COOKING </h>
+<a href="cooking.html"> <img class="centered" style ="width: 20vw;  top: 57%; left: 50%;" src="media/youtubethumbnail.png" alt="thumbnail of Carbonara tutorial on youtube"></a>
+<p class="centered" style="width: 20vw;font-size: 1.3vw; top: 78%; left: 50%;"> With some preserverence and commitment, anyone can succeed in cooking! Find out how you can learn to do some simple cooking in this tab </p>
+<h class="centered" style="width: 10vw;border-style: groove; border-width: 3px; font-size: 1.3vw; top: 40%; left: 75%;"> LOCATIONS </h>
+<a href="locations.html"><img class="centered" style ="width: 20vw;  top: 57%; left: 75%;" src="media/thecheeseshop.jpg" alt="The CheeseShop"></a>
+<p class="centered" style="width: 20vw;font-size: 1.3vw; top: 75%; left: 75%;"> Find out where you can buy ingredients for cooking!</p>
+</div>
+
+<script>
+// Automatic Slideshow - change image every 4 seconds
+var myIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}    
+  x[myIndex-1].style.display = "block";  
+  setTimeout(carousel, 4000);    
+}
+
+// Used to toggle the menu on small screens when clicking on the menu button
+function myFunction() {
+  var x = document.getElementById("navDemo");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+
+// When the user clicks anywhere outside of the modal, close it
+var modal = document.getElementById('ticketModal');
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
+
+</body>
+</html>
